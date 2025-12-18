@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="id">
+  <!-- Head Section -->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tik Tak Top - Course</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- Custom CSS -->
+    <style>
+      :root {
+        --matcha-dark: #2c361f;
+        --matcha-hero: #7d8b63;
+        --matcha-light: #edf1e4;
+        --accent-gold: #d4af37;
+        --white: #ffffff;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--white);
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+      }
+      .navbar {
+        background-color: var(--matcha-dark) !important;
+        padding: 1rem 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      .navbar-brand {
+        font-weight: 800;
+        font-size: 1.4rem;
+        color: var(--white) !important;
+        display: flex;
+        align-items: center;
+      }
+      .nav-link {
+        color: rgba(255, 255, 255, 0.85) !important;
+        font-weight: 600;
+        margin: 0 5px;
+        transition: all 0.3s;
+      }
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--accent-gold) !important;
+      }
+      .dropdown-menu {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+      }
+      .dropdown-item {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--matcha-dark);
+      }
+      .dropdown-item:hover {
+        background-color: var(--matcha-light);
+        color: var(--matcha-hero);
+      }
+      .jumbotron {
+        background-color: var(--matcha-hero);
+        color: white;
+        padding-top: 6rem;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        position: relative;
+      }
+      .jumbotron svg {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-bottom: -1px;
+      }
+
+      .section-pad {
+        padding: 80px 0;
+      }
+
+      .bg-matcha-light {
+        background-color: var(--matcha-light);
+      }
+      .bg-matcha-hero {
+        background-color: var(--matcha-hero);
+      }
+      .bg-white {
+        background-color: var(--white);
+      }
+
+      .wave-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+      }
+      .wave-container svg {
+        display: block;
+        width: calc(100% + 1.3px);
+        height: auto;
+      }
+
+      .custom-card {
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s;
+        background: white;
+        height: 100%;
+      }
+      .custom-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .btn-gold {
+        background-color: var(--accent-gold);
+        color: var(--matcha-dark);
+        border-radius: 50px;
+        padding: 12px 30px;
+        font-weight: 800;
+        border: none;
+        transition: all 0.3s;
+      }
+      .btn-gold:hover {
+        background-color: #bfa030;
+        color: white;
+        transform: scale(1.05);
+      }
+
+      .icon-circle {
+        width: 70px;
+        height: 70px;
+        background: var(--matcha-light);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: var(--accent-gold);
+        margin: 0 auto 15px;
+      }
+
+      .table-custom thead th {
+        background-color: var(--matcha-dark);
+        color: var(--accent-gold);
+        border: none;
+      }
+
+      footer {
+        background-color: var(--matcha-dark);
+        color: rgba(255, 255, 255, 0.7);
+        padding-top: 60px;
+        padding-bottom: 20px;
+      }
+      footer a {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.7);
+      }
+      footer a:hover {
+        color: var(--accent-gold);
+      }
+    </style>
+    <!-- End Custom CSS -->
+  </head>
+  <!-- Head Section End -->
+  <!-- Body Start -->
+  <body>
+    <!--Start Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img
+            src="Tik Tak Top.png"
+            alt="Logo Tik Tak Top"
+            class="rounded-circle me-2"
+            width="40"
+            height="40"
+          />
+          TIK TAK TOP
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Layanan
+              </a>
+              <ul class="dropdown-menu shadow">
+                <li>
+                  <a class="dropdown-item" href="#pendaftaran"
+                    >Pendaftaran Anggota</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#informasi"
+                    >Informasi Layanan</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#koleksi">Koleksi</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--End Navbar-->
+    <!--Start Jumbotron-->
+    <div class="jumbotron text-center" id="home">
+      <img
+        src="Tik Tak Top.png"
+        alt="Logo"
+        width="200"
+        class="rounded-circle img-thumbnail mb-3"
+      />
+
+      <h1 class="display-4 fw-bold">Tik Tak Top Course</h1>
+
+      <p class="lead mb-4">
+        Tempat belajar komputer paling nyaman & keren di Indonesia.
+      </p>
+
+      <a href="#pendaftaran" class="btn btn-gold btn-lg shadow mb-4"
+        >Mulai Belajar Sekarang</a
+      >
+
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#edf1e4"
+          fill-opacity="1"
+          d="M0,224L80,213.3C160,203,320,181,480,192C640,203,800,245,960,245.3C1120,245,1280,203,1360,181.3L1440,160L1440,320L
+          1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+        ></path>
+      </svg>
+    </div>
+    <!--End Jumbotron-->
+    <!--About Section-->
+    <section id="about" class="bg-matcha-light section-pad pb-0 pt-0">
+      <div class="container text-center pt-5">
+        <h6 class="text-warning fw-bold text-uppercase">Tentang Kami</h6>
+        <h2 class="fw-bold mb-4" style="color: var(--matcha-dark)">
+          Lembaga Kursus Komputer Terkeren
+        </h2>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <p class="text-secondary fs-5">
+            Tik Tak Top hadir sebagai solusi bagi Anda yang ingin menguasai teknologi dengan strategi cerdas. 
+            Kurikulum kami dirancang agar siswa tidak sekadar paham teori, tetapi siap terjun ke dunia industri
+            kreatif dan teknologi. Ayo dftr cpt, nanti full. 
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--End About Section-->
+    <!--Wave Separator-->
+    <div class="wave-container bg-matcha-light">
+      <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+        <path
+          fill="#ffffff"
+          fill-opacity="1"
+          d="M0,192L60,202.7C120,213,240,235,360,229.3C480,224,600,192,720,176C840,160,960,160,1080,
+          170.7C1200,181,1320,203,1380,213.3L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,
+          320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+        ></path>
+      </svg>
+    </div>
+    <!--End Wave Separator-->
+    <!--Pendaftaran Section-->
+    <section id="pendaftaran" class="bg-white section-pad pb-0">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold" style="color: var(--matcha-dark)">
+            Pendaftaran Anggota
+          </h2>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="custom-card p-5 border shadow-sm">
+              <form name="Tik-Tak-Top-Course">
+                  <div class="row g-4">
+                    <div class="col-md-6">
+                    <label class="form-label fw-bold small">Nama Lengkap</label>
+                    <input type="text" class="form-control" name="Nama Lengkap" placeholder="Masukkan nama lengkap..." required />
+                    </div>
+                  <div class="col-md-6">
+                    <label class="form-label fw-bold small">NIK/NIS</label>
+                    <input type="number" class="form-control" name="NIK/NIS" placeholder="16 Digit Nomor" required />
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label fw-bold small">Pilih Kelas</label>
+                    <select class="form-select" name="Pilih Kelas" required>
+                    <option selected disabled value="">Pilih salah satu...</option>
+                    <option value="Desain Grafis">Desain Grafis</option>
+                    <option value="Web Programming">Web Programming</option>
+                    <option value="Data Analysis">Data Analysis</option>
+                    <option value="Python Pemula">Python Pemula</option>
+                    <option value="Excel Data">Excel untuk Data</option>
+                    </select>
+                 </div>
+                  <div class="col-12">
+                    <label class="form-label fw-bold small">Alamat Lengkap</label>
+                    <textarea class="form-control" name="Alamat Lengkap" rows="3" required></textarea>
+                  </div>
+                  <div class="col-12">
+                        <label class="form-label fw-bold small">Nomor WhatsApp</label>
+                        <div class="input-group">
+                             <span class="input-group-text bg-light text-muted fw-bold">+62</span>
+                             <input type="number" class="form-control" name="Nomor WhatsApp" placeholder="8123456789" required />
+                        </div>
+                    </div>
+                   <div class="col-12 text-center mt-4">
+                    <button type="submit" class="btn btn-gold w-100 btn-kirim">
+                    Kirim Pendaftaran
+                    </button>
+                  <button class="btn btn-gold w-100 btn-loading d-none" type="button" disabled>
+                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  Loading...
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--End Pendaftaran Section-->
+    <!--Wave Separator-->
+    <div class="wave-container bg-white">
+      <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+        <path
+          fill="#edf1e4"
+          fill-opacity="1"
+          d="M0,128L48,144C96,160,192,192,288,197.3C384,203,480,181,576,165.3C672,149,768,139,864,
+          154.7C960,171,1056,213,1152,224C1248,235,1344,213,1392,202.7L1440,192L1440,320L1392,320C1344,
+          320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,
+          320C192,320,96,320,48,320L0,320Z"
+        ></path>
+      </svg>
+    </div>
+    <!--End Wave Separator-->
+    <!--Informasi Layanan Section-->
+    <section id="informasi" class="bg-matcha-light section-pad pb-0">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold" style="color: var(--matcha-dark)">
+            Informasi Layanan & Jadwal
+          </h2>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="card border-0 shadow-sm overflow-hidden rounded-4">
+              <table
+                class="table table-custom table-hover mb-0 text-center align-middle"
+              >
+                <thead>
+                  <tr>
+                    <th class="py-3 text-start ps-5">Program Kelas</th>
+                    <th class="py-3">Hari</th>
+                    <th class="py-3">Jam (WIB)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="fw-bold text-start ps-5">Desain Grafis</td>
+                    <td>Senin & Kamis</td>
+                    <td>15.00 - 17.00</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold text-start ps-5">Web Programming</td>
+                    <td>Selasa & Jumat</td>
+                    <td>15.00 - 17.00</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold text-start ps-5">Data Analysis</td>
+                    <td>Rabu & Sabtu</td>
+                    <td>13.00 - 15.00</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold text-start ps-5">Python Pemula</td>
+                    <td>Senin & Rabu</td>
+                    <td>18.00 - 20.00</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold text-start ps-5">Excel untuk Data</td>
+                    <td>Selasa & Kamis</td>
+                    <td>18.00 - 20.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--End Informasi Layanan Section-->
+    <!--Wave Separator-->
+    <div class="wave-container bg-matcha-light">
+      <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+        <path
+          fill="#7d8b63"
+          fill-opacity="1"
+          d="M0,224L60,229.3C120,235,240,245,360,224C480,203,600,149,720,144C840,139,960,181,1080,
+          192C1200,203,1320,181,1380,170.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,
+          320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+        ></path>
+      </svg>
+    </div>
+    <!--End Wave Separator-->
+    <!--Koleksi Section-->
+    <section id="koleksi" class="bg-matcha-hero section-pad pb-0">
+      <div class="container">
+        <div class="text-center mb-5 text-white">
+          <h6 class="text-warning fw-bold">KOLEKSI</h6>
+          <h2 class="fw-bold">Daftar Kelas Kursus</h2>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-4 col-lg">
+            <div
+              class="custom-card p-4 text-center h-100 d-flex flex-column align-items-center justify-content-center"
+            >
+              <div class="icon-circle"><i class="bi bi-palette-fill"></i></div>
+              <h5 class="fw-bold mb-3">Desain Grafis</h5>
+              <p class="text-muted small mb-0">
+                Adobe Photoshop, Illustrator & Visual Branding.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg">
+            <div
+              class="custom-card p-4 text-center h-100 d-flex flex-column align-items-center justify-content-center"
+            >
+              <div class="icon-circle"><i class="bi bi-code-square"></i></div>
+              <h5 class="fw-bold mb-3">Web Programming</h5>
+              <p class="text-muted small mb-0">
+                Fullstack Web Dev (HTML, CSS, JS, Framework).
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg">
+            <div
+              class="custom-card p-4 text-center h-100 d-flex flex-column align-items-center justify-content-center"
+            >
+              <div class="icon-circle">
+                <i class="bi bi-graph-up-arrow"></i>
+              </div>
+              <h5 class="fw-bold mb-3">Data Analysis</h5>
+              <p class="text-muted small mb-0">
+                SQL, Python for Data, Power BI & Tableau.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg">
+            <div
+              class="custom-card p-4 text-center h-100 d-flex flex-column align-items-center justify-content-center"
+            >
+              <div class="icon-circle"><i class="bi bi-terminal-fill"></i></div>
+              <h5 class="fw-bold mb-3">Python Pemula</h5>
+              <p class="text-muted small mb-0">
+                Dasar Algoritma & Logika Pemrograman.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg">
+            <div
+              class="custom-card p-4 text-center h-100 d-flex flex-column align-items-center justify-content-center"
+            >
+              <div class="icon-circle"><i class="bi bi-table"></i></div>
+              <h5 class="fw-bold mb-3">Excel untuk Data</h5>
+              <p class="text-muted small mb-0">
+                Rumus Lanjutan, Pivot Table & Dashboard.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--End Koleksi Section-->
+    <!--Wave Separator-->
+    <div class="wave-container bg-matcha-hero">
+      <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+        <path
+          fill="#2c361f"
+          fill-opacity="1"
+          d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,
+          235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,
+          1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,
+          320L0,320Z"
+        ></path>
+      </svg>
+    </div>
+    <!--End Wave Separator-->
+    <!--Footer-->
+    <footer>
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-5">
+            <h5 class="text-white fw-bold mb-3">
+              <i class="bi bi-cpu-fill me-2 text-warning"></i>TIK TAK TOP
+            </h5>
+            <p>
+            Lembaga Kursus Komputer Terkeren di Indonesia yang menyediakan berbagai program pelatihan teknologi
+            untuk mengasah keterampilan digital Anda.
+            </p>
+          </div>
+          <div class="col-lg-3">
+            <h5 class="text-warning mb-3">Hubungi Kami</h5>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-geo-alt me-2"></i> Jl. Uwiw No. 27</li>
+              <li><i class="bi bi-whatsapp me-2"></i> +62 895-3574-15601</li>
+              <li><i class="bi bi-envelope me-2"></i> info@tiktaktop.id</li>
+            </ul>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <h5 class="text-warning mb-3">Ikuti Kami</h5>
+            <div class="fs-3 text-white-50">
+              <a href="#" class="text-white-50"
+                ><i class="bi bi-instagram me-3"></i
+              ></a>
+              <a href="#" class="text-white-50"
+                ><i class="bi bi-youtube me-3"></i
+              ></a>
+              <a href="#" class="text-white-50"
+                ><i class="bi bi-facebook"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <hr class="mt-5 opacity-25" />
+        <div class="text-center small opacity-50">
+          &copy; 2025 Tik Tak Top Course. All Rights Reserved.<b>Punya Fines.</b>
+        </div>
+      </div>
+    </footer>
+    <!--End Footer-->
+    <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzWPb5M6e2_anrQHoYZAsiIe1ri7nqxr-Or3gRBumqh9OSjEExXEDjb3cFB_C-JNaBT/exec';
+    const form = document.forms['Tik-Tak-Top-Course'];
+    form.addEventListener('submit', e => {
+    e.preventDefault();
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+          console.log('Success!', response);
+          alert("Data Terkirim!"); 
+          form.reset(); 
+      })
+      .catch(error => console.error('Error!', error.message));
+    });
+    </script>
+  </body>
+  <!-- Body End -->
+</html>
